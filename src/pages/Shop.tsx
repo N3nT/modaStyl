@@ -4,6 +4,7 @@ import Nav from '../components/shop/Nav';
 import ProductCard from '../components/shop/ProductCard';
 import Pagination from '../components/shop/Pagination';
 import Categories from '../components/shop/Categories';
+import Sort from '../components/shop/Sort';
 
 const Shop = () => {
     const [categoriesStatus, setCategoriesStatus] = useState(false);
@@ -31,6 +32,7 @@ const Shop = () => {
             </div>
             <p className='text-gray-400'>Ilość produktów: <span>10</span></p>
             <Categories status={categoriesStatus} setCategoryStatus={setCategoriesStatus}></Categories>
+            <Sort status={sortStatus} setSortStatus={setSortStatus}></Sort>
             <div className='w-full flex flex-wrap justify-center space-x-5 max-w-[1200px]'>
                 <Link to="/product/1"><ProductCard/></Link>
                 <Link to="/product/1"><ProductCard/></Link>
