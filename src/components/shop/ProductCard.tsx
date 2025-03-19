@@ -1,6 +1,6 @@
 const ProductCard = () => {
     return(
-        <div className="max-w-[280px] my-5">
+        <div className="max-w-[280px] my-5 hover:scale-101 transition-transform">
             <img src="/product.png" alt="Product image" />
             <div className="mt-2 text-lg">
                 <p>Garnitur Granatowy Wełniany Monterrey</p>

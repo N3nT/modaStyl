@@ -1,12 +1,12 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 
-const Sort = ({status, setSortStatus} : {status: boolean, setSortStatus: React.Dispatch<React.SetStateAction<boolean>>}) => {
+const MobileSort = ({status, setSortStatus} : {status: boolean, setSortStatus: React.Dispatch<React.SetStateAction<boolean>>}) => {
     return(
             //wysokosc nav = 68px
             <>
             {status ? (
-                <div className="w-full absolute h-screen bg-white top-[68px] p-10 flex justify-center overflow-hidden">
+                <div className="w-full absolute h-screen bg-white top-[68px] left-0 p-10 flex justify-center overflow-hidden">
                     <div className="w-full max-w-[270px]">
                         <div className="flex items-center"><FaArrowLeft className="text-2xl" onClick={() => setSortStatus(false)}/><p className="text-xl ml-2">Produkty</p></div>
                         <div className="mt-5">
@@ -20,6 +20,7 @@ const Sort = ({status, setSortStatus} : {status: boolean, setSortStatus: React.D
                         <div className="mt-5">
                             <h3>Sortuj</h3>
                             <select name="" id="" className="bg-gray-200 mt-2">
+                                <option value="" selected={true}>Domyślnie</option>
                                 <option value="">Popularne</option>
                                 <option value="">Nowości</option>
                                 <option value="">Najniższa Cena</option>
@@ -30,6 +31,7 @@ const Sort = ({status, setSortStatus} : {status: boolean, setSortStatus: React.D
                         <div className="mt-5">
                             <h3>Materiał</h3>
                             <select name="" id="" className="bg-gray-200 mt-2">
+                                <option value="" selected={true}>Domyślnie</option>
                                 <option value="">Popularne</option>
                                 <option value="">Nowości</option>
                                 <option value="">Najniższa Cena</option>
@@ -40,6 +42,7 @@ const Sort = ({status, setSortStatus} : {status: boolean, setSortStatus: React.D
                         <div className="mt-5">
                             <h3>Kolor</h3>
                             <select name="" id="" className="bg-gray-200 mt-2">
+                                <option value="" selected={true}>Domyślnie</option>
                                 <option value="">Popularne</option>
                                 <option value="">Nowości</option>
                                 <option value="">Najniższa Cena</option>
@@ -47,16 +50,16 @@ const Sort = ({status, setSortStatus} : {status: boolean, setSortStatus: React.D
                                 <option value="">Promocje</option>
                             </select>
                         </div>
-                        <div className="mt-5">
+                        {/* <div className="mt-5">
                             <h3>Płeć</h3>
                             <div>
-                                <input type="radio" name="sex" id="women" value={"women"}/>
+                                <input type="checkbox" name="sex" id="women" value={"women"}/>
                                 <label htmlFor="women">Kobieta</label>
 
-                                <input type="radio" name="sex" id="men" value={"men"} className="ml-5"/>
+                                <input type="checkbox" name="sex" id="men" value={"men"} className="ml-5"/>
                                 <label htmlFor="men">Mężczyzna</label>
                             </div>
-                        </div>
+                        </div> */}
                     </div>     
                 </div>
                 ) : (null)}
@@ -64,4 +67,4 @@ const Sort = ({status, setSortStatus} : {status: boolean, setSortStatus: React.D
             )
 }
 
-export default Sort;
+export default MobileSort;
