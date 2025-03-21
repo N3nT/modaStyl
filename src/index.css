@@ -3,4 +3,6 @@
 
 @theme {
     --font-OpenSans: "Open Sans", sans-serif;
+    --color-darkBlue: #183B57;
+    --color-lightGray: #d9d9d9;
 }
