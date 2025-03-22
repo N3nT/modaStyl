@@ -1,17 +1,17 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { FaArrowDown } from "react-icons/fa";
 import Nav from "../components/shop/Nav";
 import ProductCard from "../components/shop/ProductCard";
 import Footer from "../components/shop/Footer";
+import Accordion from "../components/shop/Accordion";
 
 const Product = () => {
     const { productName } = useParams();
     console.log(productName);
 
     const [firstAccordion, setFirstAccordion] = useState(false);
-    const [test, setTest] = useState(false);
-    const [three, setHtree] = useState(false);
+    const [secondAccordion, setSecondAccordion] = useState(false);
+    const [thirdAccordion, setThirdAccordion] = useState(false);
 
     const resetScroll = () => {
         window.scrollTo(0, 0);
@@ -41,49 +41,12 @@ const Product = () => {
                         <button type="submit" className="p-5 bg-darkBlue w-full text-white mt-3">Dodaj do koszyka</button>
                     </form>
                     <div className="w-full max-w-[450px]">
-                        <div className="flex flex-col w-full justify-between items-center border-y-1 border-black p-5">
-                            <div className="flex w-full justify-between items-center">
-                                <p>Opis</p>
-                                <FaArrowDown onClick={() => {
-                                    setFirstAccordion(!firstAccordion);
-                                }}/>
-                            </div>
-                            {firstAccordion ? (
-                                 <div className="mt-2 max-w-[410px]">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptatem harum delectus voluptatum voluptas repellendus repudiandae dolor culpa rerum, accusamus nisi debitis odit mollitia repellat commodi eaque placeat totam nostrum!</p>
-                                </div>
-                            ): (null)}
-                        </div>
-                        <div className="flex flex-col w-full justify-between items-center border-black p-5">
-                            <div className="flex w-full justify-between items-center">
-                                <p>Szczegóły produktu</p>
-                                <FaArrowDown onClick={() => {
-                                    setTest(!test);
-                                }}/>
-                            </div>
-                            {test ? (
-                                 <div className="mt-2 max-w-[430px]">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptatem harum delectus voluptatum voluptas repellendus repudiandae dolor culpa rerum, accusamus nisi debitis odit mollitia repellat commodi eaque placeat totam nostrum!</p>
-                                </div>
-                            ): (null)}
-                        </div>
-                        <div className="flex flex-col w-full justify-between items-center border-y-1 border-black p-5">
-                            <div className="flex w-full justify-between items-center">
-                                <p>Rozmiar i krój</p>
-                                <FaArrowDown onClick={() => {
-                                    setHtree(!three);
-                                }}/>
-                            </div>
-                            {three ? (
-                                 <div className="mt-2 max-w-[430px]">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptatem harum delectus voluptatum voluptas repellendus repudiandae dolor culpa rerum, accusamus nisi debitis odit mollitia repellat commodi eaque placeat totam nostrum!</p>
-                                </div>
-                            ): (null)}
-                        </div>
+                        <Accordion name={"Opis"} status={firstAccordion} handleChangeStatus={setFirstAccordion} text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptatem harum delectus voluptatum voluptas repellendus repudiandae dolor culpa rerum, accusamus nisi debitis odit mollitia repellat commodi eaque placeat totam nostrum!"} border={true}/>
+                        <Accordion name={"Szczegóły"} status={secondAccordion} handleChangeStatus={setSecondAccordion} text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptatem harum delectus voluptatum voluptas repellendus repudiandae dolor culpa rerum, accusamus nisi debitis odit mollitia repellat commodi eaque placeat totam nostrum!"}/>
+                        <Accordion name={"Rozmiar i kroj"} status={thirdAccordion} handleChangeStatus={setThirdAccordion} text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptatem harum delectus voluptatum voluptas repellendus repudiandae dolor culpa rerum, accusamus nisi debitis odit mollitia repellat commodi eaque placeat totam nostrum!"} border={true}/>
                     </div>
                 </div>
             </div>
-            
             <div className="mt-5 w-full p-5 max-w-[1300px]">
                 <h2 className="text-left font-bold text-xl">Polecane produkty</h2>
                 <div className="w-full flex flex-row justify-center space-x-5 flex-wrap">
