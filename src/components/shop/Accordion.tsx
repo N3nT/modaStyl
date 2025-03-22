@@ -12,9 +12,9 @@ const Accordion = ({name, status, handleChangeStatus, text, border}:accordionTyp
             <div className="flex w-full justify-between items-center">
                 <p>{name}</p>
                 {status ? 
-                (<FaArrowUp onClick={() => {handleChangeStatus(!status)}}/>) 
+                (<FaArrowUp onClick={() => {handleChangeStatus(!status)}} className="text-xl"/>) 
                 : 
-                (<FaArrowDown onClick={() => {handleChangeStatus(!status)}}/>)
+                (<FaArrowDown onClick={() => {handleChangeStatus(!status)}} className="text-xl"/>)
                 }
             </div>
             {status ? 

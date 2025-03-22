@@ -24,7 +24,7 @@ const Product = () => {
     return(
         <div className="flex flex-col items-center font-OpenSans">  
             <Nav displaySearch={false}/>
-            <div className="w-full flex flex-col items-center md:items-start md:flex-row max-w-[1000px] md:space-x-10 justify-center">
+            <div className="w-full flex flex-col items-center md:items-start md:flex-row max-w-[1000px] md:space-x-10 justify-center my-10">
                 <div className="w-full mt-2 md:min-w-[400px] md:max-w-[400px]">
                     <img src="../product.png" alt="" className="w-full md:w-[400px]"/>
                 </div>
@@ -45,6 +45,14 @@ const Product = () => {
                         <Accordion name={"Szczegóły"} status={secondAccordion} handleChangeStatus={setSecondAccordion} text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptatem harum delectus voluptatum voluptas repellendus repudiandae dolor culpa rerum, accusamus nisi debitis odit mollitia repellat commodi eaque placeat totam nostrum!"}/>
                         <Accordion name={"Rozmiar i kroj"} status={thirdAccordion} handleChangeStatus={setThirdAccordion} text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptatem harum delectus voluptatum voluptas repellendus repudiandae dolor culpa rerum, accusamus nisi debitis odit mollitia repellat commodi eaque placeat totam nostrum!"} border={true}/>
                     </div>
+                </div>
+            </div>
+            <div className="mt-5 w-full p-5 max-w-[1300px]">
+                <h2 className="text-left font-bold text-xl">Opinie</h2>
+                <div className="w-full flex flex-row justify-center space-x-5 flex-wrap">
+                    <ProductCard/>
+                    <ProductCard/>
+                    <ProductCard/>
                 </div>
             </div>
             <div className="mt-5 w-full p-5 max-w-[1300px]">
