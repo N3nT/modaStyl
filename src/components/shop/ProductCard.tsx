@@ -8,12 +8,12 @@ const ProductCard = () => {
                     <p>Garnitur Granatowy Wełniany Monterrey</p>
                     <p className="text-base text-gray-600">1399,90 zł</p>
                 </div>
-                <div className="bg-[#183B57] hover:bg-[#d9d9d9] transition-colors flex items-center justify-center p-4 rounded-l-2xl z-10">
-                    <FaCartArrowDown className="addToCart text-3xl text-white" onClick={(e) => {
+                <div className="bg-[#183B57] hover:bg-[#d9d9d9] transition-colors flex items-center justify-center p-4 rounded-l-2xl" onClick={(e) => {
                         e?.stopPropagation();
                         e?.preventDefault();
                         console.log("addToCart");
-                    }}/>
+                    }}>
+                    <FaCartArrowDown className="addToCart text-3xl text-white"/>
                 </div>
             </div>
         </div>
